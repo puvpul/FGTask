@@ -1,0 +1,62 @@
+﻿
+<div class="row">
+    <div ng-show="message">{{message}}</div>
+    <form [formGroup]="shipmentForm" (ngSubmit)="submitShipment(shipmentForm.value)">
+        <div class="col-md-6">
+            <h2>From</h2>
+            <div class="form-group">
+                <label for="senderFirstName">First Name</label>
+                <input type="text" class="form-control" name="senderFirstName" [formControl]="shipmentForm.controls['senderFirstName']" />
+            </div>
+            <div class="form-group">
+                <label for="senderLastName">Last Name</label>
+                <input type="text" class="form-control" name="senderLastName" [formControl]="shipmentForm.controls['senderLastName']" />
+            </div>
+            <div class="form-group">
+                <label for="senderAddress">Full Address</label>
+                <input type="text" class="form-control" name="senderAddress" [formControl]="shipmentForm.controls['senderAddress']"/>
+            </div>
+            <div class="form-group">
+                <label for="senderPhone">Phone</label>
+                <input type="text" class="form-control" name="senderPhone" [formControl]="shipmentForm.controls['senderPhone']" />
+            </div>
+            <div class="form-group">
+                <label for="senderEmail">Email</label>
+                <input type="text" class="form-control" name="senderEmail" [formControl]="shipmentForm.controls['senderEmail']" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>TO</h2>
+            <div class="form-group">
+                <label for="receiverFirstName">First Name</label>
+                <input type="text" class="form-control" name="receiverFirstName" [formControl]="shipmentForm.controls['receiverFirstName']"/>
+            </div>
+            <div class="form-group">
+                <label for="receiverLastName">Last Name</label>
+                <input type="text" class="form-control" name="receiverLastName" [formControl]="shipmentForm.controls['receiverLastName']"/>
+            </div>
+            <div class="form-group">
+                <label for="receiverAddress">Full Address</label>
+                <input type="text" class="form-control" name="receiverAddress" [formControl]="shipmentForm.controls['receiverAddress']" />
+            </div>
+            <div class="form-group">
+                <label for="receiverPhone">Phone</label>
+                <input type="text" class="form-control" name="receiverPhone" [formControl]="shipmentForm.controls['receiverPhone']" />
+            </div>
+            <div class="form-group">
+                <label for="receiverEmail">Email</label>
+                <input type="text" class="form-control" name="receiverEmail" [formControl]="shipmentForm.controls['receiverEmail']" />
+            </div>
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row">
+            <div class="form-group col-lg-offset-4">
+                <button type="submit" [disabled]="!shipmentForm.valid" class="btn btn-primary">Submit Shipment Details</button>
+                <!--<a [routerLink]="['/login']" class="btn btn-link">Login</a>-->
+            </div>
+        </div>
+    </form>
+</div>
